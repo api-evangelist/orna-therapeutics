@@ -1,0 +1,47 @@
+generated: '2026-08-26'
+method: probed
+source: https://www.ornatx.com/.well-known/
+note: >-
+  No /.well-known document is served. Every /.well-known/* path on Orna's own domain answers HTTP 301
+  to https://lilly.com/science/subsidiaries — the Eli Lilly subsidiaries page — following Lilly's
+  acquisition of Orna Therapeutics (definitive agreement announced 2026-02-09). Following the
+  redirect returns HTTP 200 with an HTML page titled "Our Subsidiaries | Eli Lilly and Company",
+  which is a soft-404 for these paths, NOT a well-known document. Recorded as a miss, and no
+  WellKnown / SecurityTxt / AgentCard pointer is emitted in apis.yml, because the provider serves
+  none of these surfaces. Sibling paths /llms.txt and /openapi.json answer 404 at the origin without
+  redirecting.
+hosts:
+- host: www.ornatx.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — no document
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — no document
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — no document
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — no document
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — no document
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — no document
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — not an A2A agent card
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+    note: 301 to https://lilly.com/science/subsidiaries (HTML) — not an A2A agent card

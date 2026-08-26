@@ -1,7 +1,15 @@
 aid: orna-therapeutics
 name: Orna Therapeutics
-description: 'Orna Therapeutics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Orna Therapeutics is a Cambridge, Massachusetts biotechnology company, founded in 2019 on research
+  from MIT and built by MPM Capital, that engineers circular RNA (oRNA) paired with lipid
+  nanoparticle delivery so a patient's own body generates cell therapies — its lead program ORN-252
+  is a CD19-targeting in vivo CAR-T designed for B-cell-driven autoimmune disease. Orna acquired
+  ReNAgade Therapeutics in 2024, combining its circular RNA platform with ReNAgade's LNP delivery and
+  RNA editing capabilities, and Eli Lilly announced a definitive agreement to acquire Orna on
+  2026-02-09 for up to $2.4B. Orna is a therapeutics developer, not a software vendor: it publishes
+  no API, developer portal, SDK or machine-readable contract, and as of this profile its own domain
+  ornatx.com redirects in whole to Eli Lilly's subsidiaries page.
 url: https://raw.githubusercontent.com/api-evangelist/orna-therapeutics/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,13 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Biotechnology
+- Therapeutics
+- RNA
+- Life Sciences
+- Pharmaceuticals
+- Cell Therapy
+- Research
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +34,39 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/orna-therapeutics-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/orna-therapeutics_stock/
+  url: https://www.ornatx.com/
+- type: GitHubOrganization
+  url: https://github.com/OrnaComputationTeam
+- type: ParentCompany
+  url: https://www.lilly.com/science/subsidiaries
+- type: LinkedIn
+  url: https://www.linkedin.com/company/ornatx
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Orna Therapeutics is a clinical-stage RNA therapeutics developer with no software product, and
+    since Eli Lilly's acquisition (definitive agreement announced 2026-02-09) its entire domain
+    ornatx.com answers HTTP 301 to https://lilly.com/science/subsidiaries — every /.well-known/* path
+    included — so the only surface it still operates is a GitHub org of 44 forked third-party RNA
+    structure-prediction tools and one internal CodeCommit sync action, none of which is an API.
+  evidence:
+  - url: https://www.ornatx.com/
+    status: 301
+  - url: https://www.ornatx.com/.well-known/api-catalog
+    status: 301
+  - url: https://www.ornatx.com/openapi.json
+    status: 404
+  - url: https://www.ornatx.com/llms.txt
+    status: 404
+  - url: https://github.com/OrnaComputationTeam
+    status: 200
+  checked: '2026-08-26'
