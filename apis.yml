@@ -41,7 +41,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-08-26'
-modified: '2026-08-26'
+modified: '2026-10-06'
 tags:
 - Company
 - Biotechnology
@@ -58,6 +58,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://www.lilly.com/news
+  type: Blog
 - type: DomainSecurity
   url: security/orna-therapeutics-domain-security.yml
 - type: Website
